@@ -7,14 +7,18 @@
           <button mat-mini-fab color="primary" (click)="openDialog()">
             +
           </button>
-          Entities connected (3)
+          Entities connected ({{checkedItemsCounter}})
         </div>
       </mat-panel-title>
     </mat-expansion-panel-header>
     <mat-list>
-      <mat-list-item> Pepper <br> P </mat-list-item>
-      <mat-list-item> Salt <br> S</mat-list-item>
-      <mat-list-item> Paprika <br> P</mat-list-item>
+      <mat-list-item *ngFor="let item of entities;" [ngClass]="{hidden: !item.connected}">
+        <div *ngIf="item.connected">
+          <span >{{item.name}}</span>
+          <br>
+          <span class="entitiesType">{{item.type}}</span>
+        </div>
+      </mat-list-item>
     </mat-list>
   </mat-expansion-panel>
 </mat-accordion>

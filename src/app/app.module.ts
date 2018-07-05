@@ -11,10 +11,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { MatListModule } from '@angular/material/list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { AppComponent } from './app.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { DialogComponent } from './dialog/dialog.component';
+import {EntitiesService} from './core/services/entities.service';
 
 
 
@@ -38,12 +40,13 @@ import { DialogComponent } from './dialog/dialog.component';
     MatExpansionModule,
     FormsModule,
     MatListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCheckboxModule
   ],
   entryComponents: [
     DialogComponent
   ],
-  providers: [],
+  providers: [EntitiesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

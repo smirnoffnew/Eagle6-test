@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { DialogComponent } from '../dialog/dialog.component';
+import { EntitiesService } from '../core/services/entities.service';
+import 'rxjs/add/observable/of';
 
 @Component({
   selector: 'app-main-page',
@@ -9,12 +11,20 @@ import { DialogComponent } from '../dialog/dialog.component';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private entitiesService: EntitiesService, private dialog: MatDialog) {
+  this.entitiesService = entitiesService;
+    this.entities = [];
+  }
   panelOpenState = false;
+  entities: any = [];
+  checkedItemsCounter = 0;
 
   ngOnInit() {
+    this.entitiesService.getData().subscribe((data: any) => {
+      this.checkedItemsCounter = data.filter((item) => item.connected === true).length;
+      this.entities = data;
+    });
   }
-
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '100%',
@@ -22,8 +32,6 @@ export class MainPageComponent implements OnInit {
       data: 'Text'
     });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
-    });
+    dialogRef.afterClosed().subscribe(result => {});
   }
 }

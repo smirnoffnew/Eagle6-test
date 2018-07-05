@@ -43,3 +43,20 @@ main {
   box-shadow: none !important;
   margin-right: 20px;
 }
+
+.entitiesType {
+  opacity: 0.6;
+  font-size: 14px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.checkBoxContainer {
+  display: flex;
+  align-items: center;
+}
+.entitiesName {
+  margin-left: 10px;
+}
