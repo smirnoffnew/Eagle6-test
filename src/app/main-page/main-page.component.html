@@ -1,0 +1,20 @@
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <div>
+          <button mat-mini-fab color="primary" (click)="openDialog()">
+            +
+          </button>
+          Entities connected (3)
+        </div>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list>
+      <mat-list-item> Pepper <br> P </mat-list-item>
+      <mat-list-item> Salt <br> S</mat-list-item>
+      <mat-list-item> Paprika <br> P</mat-list-item>
+    </mat-list>
+  </mat-expansion-panel>
+</mat-accordion>

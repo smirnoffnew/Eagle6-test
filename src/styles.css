@@ -1,7 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 html, body {
   padding: 0;
   margin: 0;
+}
+
+main {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.mat-dialog-title {
+  text-align: center;
+}
+
+.searchContainer .mat-form-field{
+  width: 100%;
+  padding: 0 10px;
+}
+
+.cdk-overlay-pane {
+  max-width: 100% !important;
+}
+
+.mat-dialog-content, .mat-dialog-actions {
+  width: 1200px;
+  margin: auto !important;
+}
+
+.mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+.mat-expansion-panel {
+  min-height: 80px;
+}
+.mat-expansion-panel-header {
+  min-height: 80px;
+}
+
+.mat-expansion-panel-header .mat-mini-fab {
+  box-shadow: none !important;
+  margin-right: 20px;
 }
